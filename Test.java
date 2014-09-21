@@ -8,6 +8,7 @@ public class Test
 	public static void main(String[] args) 
 	{
 		System.out.println(factorizePrime(12));
+		System.out.println(factorizePrime(843));
 		int min = minSpaceDim(factorizePrime(12), factorizePrime(72));
 		System.out.println("The minimum space dim is " + min);
 		
@@ -46,7 +47,10 @@ public class Test
 			if (n%i == 0 && isPrime(i))
 			{
 				if (isPrime(i))
+				{
 					primeFactorization.add(i);
+					primeFactorization.addAll(factorizePrime(n/i));
+				}	
 
 				else
 					primeFactorization.addAll(factorizePrime(i));	
@@ -74,5 +78,6 @@ public class Test
 	{
 		return Math.max(getDim(a), getDim(b));
 	}
+	
 	
 }
