@@ -7,7 +7,8 @@ public class Test
 
 	public static void main(String[] args) 
 	{
-		int min = minSpaceDim(factorizePrime(72), factorizePrime(84));
+		System.out.println(factorizePrime(12));
+		int min = minSpaceDim(factorizePrime(12), factorizePrime(72));
 		System.out.println("The minimum space dim is " + min);
 		
 
@@ -15,17 +16,16 @@ public class Test
 
 	public static boolean isPrime(int n)
 	{
-		if (n == 0 || n == 1)
+		if (n == 0 || n == 1 || n%2 == 0)
 			return false;
 
-		if (n%2 != 0)
-		{
-			for (int i = 0; i < Math.sqrt(n); i++)
+	
+			for (int i = 2; i < Math.sqrt(n); i++)
 			{
-				if(i != 1 &&  n%i == 0)
+				if(n%i == 0)
 					return false;
 			}	
-		}
+		
 		return true;
 	}
 	
