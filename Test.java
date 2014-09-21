@@ -79,5 +79,37 @@ public class Test
 		return Math.max(getDim(a), getDim(b));
 	}
 	
+	public static int[][] getCoords(ArrayList<Integer> a)
+	{
+		int[][] coords = new int[getDim(a)][2];
+		
+
+		int[] firstBuffer = new int[a.size()];
+		firstBuffer[0] = a.get(0);
+		for (int i = 1; i < a.size(); i++)
+		{	
+			if (a.get(i) != a.get(i-1))
+				firstBuffer[i] = a.get(i);
+		}
+
+		int counter = 0;
+		for (int i = 0; i < firstBuffer.length; i++)
+		{
+			counter++;
+			if (firstBuffer[i] == 0)
+				break;
+		}
+		int[] firstPrimes = new int[counter];
+		for (int i = 0; i < counter; i++)
+			firstPrimes[i] = firstBuffer[i];
+
+		int[] firstFreq = new int[counter];
+		int freqCounter = 0;
+		for (int i = 0; i < a.size();
+		{
+
+		
+		return coords;
+	}
 	
 }
